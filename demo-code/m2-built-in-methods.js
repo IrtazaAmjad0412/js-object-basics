@@ -39,24 +39,10 @@ devslopesDiner.printAd = function () {
 
 devslopesDiner.printAd();
 
-
-// Static v Instance 
+// Static v Instance
 
 // Static Method
-Object.keys(devslopesDiner); 
+Object.keys(devslopesDiner);
 
 // Instance Methods
 devslopesDiner.hasOwnProperty("founded");
-
-
-
-
-
-
-
-
-
-
-
-
-

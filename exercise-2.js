@@ -3,7 +3,7 @@ Module Two Exercise: Object Methods
 Start with exercise-2.md if you haven't read it! 
 */
 
-//  DO NOT EDIT THE BELOW OBJECT // 
+//  DO NOT EDIT THE BELOW OBJECT //
 
 const papaJohns = {
   name: "Papa John's",
@@ -24,6 +24,42 @@ const papaJohns = {
   acceptsReservations: false,
 };
 
-// DO NOT EDIT THE ABOVE OBJECT // 
+// DO NOT EDIT THE ABOVE OBJECT //
 
-// YOUR WORK GOES HERE // 
+// YOUR WORK GOES HERE //
+
+function grabCategories(object) {
+  return Object.keys(object);
+}
+
+console.log(grabCategories(papaJohns));
+console.log(grabCategories(papaJohns.pizzaToppings));
+
+function verifyValues(object, number) {
+  if (Object.values(object).length === number) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(verifyValues(papaJohns, 9));
+
+function getToppingsInfo(object, stringKey) {
+  return Object.entries(object[stringKey]);
+}
+
+console.log(getToppingsInfo(papaJohns, "pizzaToppings"));
+
+papaJohns.printAd = function (
+  topping,
+  address = "555 Main Street",
+  slogan = "Better Ingredients. Better Pizza. Papa John's."
+) {
+  return `Welcome to Papa John's! We are located at ${address}.
+This week, we are having a sale on ${topping} for $${this.pizzaToppings[topping]}. 
+${slogan}`;
+};
+
+console.log(papaJohns.printAd("bacon"));
+console.log(papaJohns.printAd("bacon", "555 New Street", "Good Ingredients. Good Pizza."));
